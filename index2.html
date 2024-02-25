@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Routing</title>
+    <style>
+      nav {
+        background-color: #333;
+        padding: 10px;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 5px 10px;
+      }
+      .page {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#" onclick="showPage('home')">Home</a>
+      <a href="#" onclick="showPage('about')">About</a>
+      <a href="#" onclick="showPage('contact')">Contact</a>
+    </nav>
+
+    <div id="home" class="page">
+      <h2>Home</h2>
+      <p>Welcome to the home page!</p>
+    </div>
+
+    <div id="about" class="page">
+      <h2>About</h2>
+      <p>About us page content goes here.</p>
+    </div>
+
+    <div id="contact" class="page">
+      <h2>Contact</h2>
+      <p>Contact us page content goes here.</p>
+    </div>
+
+    <script>
+      function showPage(pageId) {
+        var pages = document.querySelectorAll(".page");
+        pages.forEach(function (page) {
+          page.style.display = "none";
+        });
+
+        var pageToShow = document.getElementById(pageId);
+        if (pageToShow) {
+          pageToShow.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>
